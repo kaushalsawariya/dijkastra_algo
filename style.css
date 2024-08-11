@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(Pathfinding.png);
+
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    gap: 2px;
+    width: 500px;
+    height: 500px;
+    margin: 20px auto;
+    background-color: #CBE2B5;
+ 
+}
+
+h1 {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 50px;
+    color: #A02334;
+    background-color: rgb(255, 238, 173, 0.5);
+
+}
+
+.grid-item {
+    background-color: #86AB89;
+    /* border: 1px solid #050404; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    user-select: none;
+}
+
+.blockage {
+    background-color: #A28B55;
+}
+
+.path {
+    background-color: #0056f6ca;
+}
+
+.btns {
+
+    position: relative;
+    left: 40%;
+
+
+}
+
+button {
+    width: 150px;
+    padding-top: 3px;
+    padding-bottom: 2px;
+    border-radius: 10px;
+
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Dijkastra Algorithm</title>
+</head>
+<body>
+    <h1>Dijkastra Algorithm</h1>
+    <div class="grid-container">
+        <div class="grid-item" data-row="0" data-col="0"></div>
+        <div class="grid-item" data-row="0" data-col="1"></div>
+        <div class="grid-item" data-row="0" data-col="2"></div>
+        <div class="grid-item" data-row="0" data-col="3"></div>
+        <div class="grid-item" data-row="0" data-col="4"></div>
+        <div class="grid-item" data-row="0" data-col="5"></div>
+        <div class="grid-item" data-row="0" data-col="6"></div>
+        <div class="grid-item" data-row="0" data-col="7"></div>
+        <div class="grid-item" data-row="0" data-col="8"></div>
+        <div class="grid-item" data-row="0" data-col="9"></div>
+        
+        <div class="grid-item" data-row="1" data-col="0"></div>
+        <div class="grid-item" data-row="1" data-col="1"></div>
+        <div class="grid-item" data-row="1" data-col="2"></div>
+        <div class="grid-item" data-row="1" data-col="3"></div>
+        <div class="grid-item" data-row="1" data-col="4"></div>
+        <div class="grid-item" data-row="1" data-col="5"></div>
+        <div class="grid-item" data-row="1" data-col="6"></div>
+        <div class="grid-item" data-row="1" data-col="7"></div>
+        <div class="grid-item" data-row="1" data-col="8"></div>
+        <div class="grid-item" data-row="1" data-col="9"></div>
+        
+        <div class="grid-item" data-row="2" data-col="0"></div>
+        <div class="grid-item" data-row="2" data-col="1"></div>
+        <div class="grid-item" data-row="2" data-col="2"></div>
+        <div class="grid-item" data-row="2" data-col="3"></div>
+        <div class="grid-item" data-row="2" data-col="4"></div>
+        <div class="grid-item" data-row="2" data-col="5"></div>
+        <div class="grid-item" data-row="2" data-col="6"></div>
+        <div class="grid-item" data-row="2" data-col="7"></div>
+        <div class="grid-item" data-row="2" data-col="8"></div>
+        <div class="grid-item" data-row="2" data-col="9"></div>
+        
+        <div class="grid-item" data-row="3" data-col="0"></div>
+        <div class="grid-item" data-row="3" data-col="1"></div>
+        <div class="grid-item" data-row="3" data-col="2"></div>
+        <div class="grid-item" data-row="3" data-col="3"></div>
+        <div class="grid-item" data-row="3" data-col="4"></div>
+        <div class="grid-item" data-row="3" data-col="5"></div>
+        <div class="grid-item" data-row="3" data-col="6"></div>
+        <div class="grid-item" data-row="3" data-col="7"></div>
+        <div class="grid-item" data-row="3" data-col="8"></div>
+        <div class="grid-item" data-row="3" data-col="9"></div>
+        
+        <div class="grid-item" data-row="4" data-col="0"></div>
+        <div class="grid-item" data-row="4" data-col="1"></div>
+        <div class="grid-item" data-row="4" data-col="2"></div>
+        <div class="grid-item" data-row="4" data-col="3"></div>
+        <div class="grid-item" data-row="4" data-col="4"></div>
+        <div class="grid-item" data-row="4" data-col="5"></div>
+        <div class="grid-item" data-row="4" data-col="6"></div>
+        <div class="grid-item" data-row="4" data-col="7"></div>
+        <div class="grid-item" data-row="4" data-col="8"></div>
+        <div class="grid-item" data-row="4" data-col="9"></div>
+        
+        <div class="grid-item" data-row="5" data-col="0"></div>
+        <div class="grid-item" data-row="5" data-col="1"></div>
+        <div class="grid-item" data-row="5" data-col="2"></div>
+        <div class="grid-item" data-row="5" data-col="3"></div>
+        <div class="grid-item" data-row="5" data-col="4"></div>
+        <div class="grid-item" data-row="5" data-col="5"></div>
+        <div class="grid-item" data-row="5" data-col="6"></div>
+        <div class="grid-item" data-row="5" data-col="7"></div>
+        <div class="grid-item" data-row="5" data-col="8"></div>
+        <div class="grid-item" data-row="5" data-col="9"></div>
+        
+        <div class="grid-item" data-row="6" data-col="0"></div>
+        <div class="grid-item" data-row="6" data-col="1"></div>
+        <div class="grid-item" data-row="6" data-col="2"></div>
+        <div class="grid-item" data-row="6" data-col="3"></div>
+        <div class="grid-item" data-row="6" data-col="4"></div>
+        <div class="grid-item" data-row="6" data-col="5"></div>
+        <div class="grid-item" data-row="6" data-col="6"></div>
+        <div class="grid-item" data-row="6" data-col="7"></div>
+        <div class="grid-item" data-row="6" data-col="8"></div>
+        <div class="grid-item" data-row="6" data-col="9"></div>
+        
+        <div class="grid-item" data-row="7" data-col="0"></div>
+        <div class="grid-item" data-row="7" data-col="1"></div>
+        <div class="grid-item" data-row="7" data-col="2"></div>
+        <div class="grid-item" data-row="7" data-col="3"></div>
+        <div class="grid-item" data-row="7" data-col="4"></div>
+        <div class="grid-item" data-row="7" data-col="5"></div>
+        <div class="grid-item" data-row="7" data-col="6"></div>
+        <div class="grid-item" data-row="7" data-col="7"></div>
+        <div class="grid-item" data-row="7" data-col="8"></div>
+        <div class="grid-item" data-row="7" data-col="9"></div>
+        
+        <div class="grid-item" data-row="8" data-col="8"></div>
+        
+    </div>
+    <div class="btns">
+        
+    <button onclick="findPath()">Find Path</button>
+    <button onclick="resetGrid()">Reset Grid</button>
+
+    </div>
+        <script src="app.js"></script>
+</body>
+</html>
